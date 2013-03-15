@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>8.NumberToText</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <label for="tb-number">Enter number from 0 to 999: </label>
+	<input type="text" id="tb-number" />
+	<a href="#" id="btn-name-number" onclick="onNameNumberBtnClick()">Pronounciation in English</a>
+    <div id="js-console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    //Write a script that converts a number in the range [0...999] to a text 
+	    //corresponding to its English pronunciation.
+
+	    function onNameNumberBtnClick() {
+	        var number = document.getElementById('tb-number').value;
+	        if ((number < 0) || (number > 999)) {
+	            jsConsole.writeLine("Please enter a valid number!");
+	        }
+	        else {
+	            var hundreds = Math.floor(number / 100);
+	            var tens = Math.floor((number - hundreds * 100) / 10);
+	            var ones = number % 10;
+
+	            jsConsole.writeLine("Spelling in British English:");
+
+	            switch (hundreds) {
+	                case 1: jsConsole.write("One hundred "); break;
+	                case 2: jsConsole.write("Two hundred "); break;
+	                case 3: jsConsole.write("Three hundred "); break;
+	                case 4: jsConsole.write("Four hundred "); break;
+	                case 5: jsConsole.write("Five hundred "); break;
+	                case 6: jsConsole.write("Six hundred "); break;
+	                case 7: jsConsole.write("Seven hundred "); break;
+	                case 8: jsConsole.write("Eight hundred "); break;
+	                case 9: jsConsole.write("Nine hundred "); break;
+	                default: jsConsole.write(''); break;
+	            }
+
+	            if (hundreds != 0 && (tens != 0 || (tens == 0 && ones != 0))) {
+	                jsConsole.write('and ');
+	            }
+	            else {
+	                jsConsole.write('');
+	            }
+
+	            if (tens != 1) {
+	                switch (tens) {
+	                    case 2: jsConsole.write("twenty "); break;
+	                    case 3: jsConsole.write("thirty "); break;
+	                    case 4: jsConsole.write("fourty "); break;
+	                    case 5: jsConsole.write("fifty "); break;
+	                    case 6: jsConsole.write("sixty "); break;
+	                    case 7: jsConsole.write("seventy "); break;
+	                    case 8: jsConsole.write("eighty "); break;
+	                    case 9: jsConsole.write("ninety "); break;
+	                    default: jsConsole.write(''); break;
+	                }
+	                switch (ones) {
+	                    case 1: jsConsole.write("one"); break;
+	                    case 2: jsConsole.write("two"); break;
+	                    case 3: jsConsole.write("three"); break;
+	                    case 4: jsConsole.write("four"); break;
+	                    case 5: jsConsole.write("five"); break;
+	                    case 6: jsConsole.write("six"); break;
+	                    case 7: jsConsole.write("seven"); break;
+	                    case 8: jsConsole.write("eight"); break;
+	                    case 9: jsConsole.write("nine"); break;
+	                    default: jsConsole.write(''); break;
+	                }
+	            }
+	            else {
+	                switch (ones) {
+	                    case 1: jsConsole.write("eleven"); break;
+	                    case 2: jsConsole.write("twelve"); break;
+	                    case 3: jsConsole.write("thirteen"); break;
+	                    case 4: jsConsole.write("fourteen"); break;
+	                    case 5: jsConsole.write("fifteen"); break;
+	                    case 6: jsConsole.write("sixteen"); break;
+	                    case 7: jsConsole.write("seventeen"); break;
+	                    case 8: jsConsole.write("eighteen"); break;
+	                    case 9: jsConsole.write("nineteen"); break;
+	                    default: jsConsole.write("ten"); break;
+	                }
+	            }
+	            jsConsole.writeLine();
+	        }
+	    }
+	</script>
+</body>
+</html>

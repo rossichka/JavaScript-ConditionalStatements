@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>7.GreatestOf5</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="js-console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    //Write a script that finds the greatest of given 5 variables.
+
+	    var a = 43;
+	    var b = 93;
+	    var c = 1;
+	    var d = -93;
+	    var e = 34;
+
+	    var check1 = Math.max(a, b);
+	    var check2 = Math.max(c, d);
+
+	    if (check1 > check2 && check1 > e)
+	    {
+	        jsConsole.writeLine("The greatest variable is " + check1); 
+	    }
+	    else if (check2 > check1 && check2 > e)
+	    {
+	        jsConsole.writeLine("The greatest variable is " + check2);
+	    }
+	    else
+	    {
+	        jsConsole.writeLine("The greatest variable is " + e);
+	    }
+	</script>
+</body>
+</html>

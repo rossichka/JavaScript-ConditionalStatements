@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Loops - do-while loops</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<label for="tb-coefficient-a">a: </label>
+	<input type="text" id="tb-coefficient-a" />
+	<br />
+	<label for="tb-coefficient-b">b: </label>
+	<input type="text" id="tb-coefficient-b" />
+    <br />
+	<label for="tb-coefficient-c">c: </label>
+	<input type="text" id="tb-coefficient-c" />
+	<br />
+	<a href="#" id="btn-check-prime" onclick="onCalcBtnClick()"><strong>Calc real roots</strong></a>
+	<div id="js-console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    //Write a script that enters the coefficients a, b and c of a quadratic equation
+	    //a*x2 + b*x + c = 0
+	    //and calculates and prints its real roots. Note that quadratic equations may have 0, 1 or 2 real roots.
+
+		function onCalcBtnClick() {
+		    var a = jsConsole.readInteger("#tb-coefficient-a");
+		    var b = jsConsole.readInteger("#tb-coefficient-b");
+		    var c = jsConsole.readInteger("#tb-coefficient-c");
+		    var d = (b * b) - (4 * a * c);
+		   
+		    if (a == 0)
+		    {
+		        var x0 = (-c) / b;
+		        jsConsole.writeLine("The equation has one root: " + x0);
+		    }
+		    else if (d < 0)
+		    {
+		        jsConsole.writeLine("The equation has no real roots");
+		    }
+		    else if (d == 0)
+		    {
+		        var x1 = (-b) / (2 * a);
+		        jsConsole.writeLine("The eqation has one root: " + x1);
+		    }
+		    else
+		    {
+		        var x2 = ((-b) + Math.sqrt(d)) / (2 * a);
+		        var x3 = ((-b) - Math.sqrt(d)) / (2 * a);
+		        jsConsole.writeLine("The roots of this equations are: " + x2 + " and " + x3);
+		    }
+		}
+	</script>
+</body>
+</html>

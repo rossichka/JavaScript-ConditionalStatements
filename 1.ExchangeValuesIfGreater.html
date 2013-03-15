@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>1.ExchangeValuesIfGreater</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>			
+	    //Write an if statement that examines two integer variables and exchanges their values
+	    //if the first one is greater than the second one.
+
+	    var a = 53;
+	    var b = 6;
+	    var temp;
+
+	    if (a < b) {
+	        jsConsole.writeLine("The first integer is bigger than the second.");
+	    }
+	    else if (a == b) {
+	        jsConsole.writeLine("The two integers are equal.");
+	    }
+	    else {
+	        temp = a;
+	        a = b;
+	        b = temp;
+
+	        jsConsole.writeLine("The first number is greater than the second so we have exchanged their values.");
+	        jsConsole.writeLine("First number becomes: " + a);
+	        jsConsole.writeLine("The second number is now: " + b);
+	    }
+	</script>
+</body>
+</html>

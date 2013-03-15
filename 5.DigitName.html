@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>5.DigitName</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<input type="text" id="tb-digit" />
+	<a href="#" id="btn-name-digit" onclick="onNameDigitBtnClick()">Digit's name</a>
+	<div id="js-console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    //Write script that asks for a digit and depending on the input shows the name 
+	    //of that digit (in English) using a switch statement.
+
+	    function onNameDigitBtnClick() {
+	        var digit = jsConsole.readInteger("#tb-digit");
+	        var digitName;
+	        switch (digit) {
+	            case 1: digitName = "One"; break;
+	            case 2: digitName = "Two"; break;
+	            case 3: digitName = "Three"; break;
+	            case 4: digitName = "Four"; break;
+	            case 5: digitName = "Five"; break;
+	            case 6: digitName = "Six"; break;
+	            case 7: digitName = "Seven"; break;
+	            case 8: digitName = "Eight"; break;
+	            case 9: digitName = "Nine"; break;
+	            case 0: digitName = "Zero"; break;
+	            default: digitName = "Error! Please write a valid digit."; break;
+	        }
+	        jsConsole.writeLine(digitName);
+	    }
+	</script>
+</body>
+</html>
